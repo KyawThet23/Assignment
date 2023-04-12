@@ -1,0 +1,11 @@
+
+//query to find one student's subjects and mark //
+select subject.name , student_subject.mark from student_subject 
+inner join subject on student_subject.subject_id = subject.id 
+where student_subject.student_id = {input};
+
+//query using inside controller
+String hql = "SELECT s.name, ss.mark FROM StudentSubject ss JOIN ss.subject s WHERE ss.student.id = :studentId";
+Query query = entityManager.createQuery(hql);
+query.setParameter("studentId", studentId);
+List<Object[]> results = query.getResultList();

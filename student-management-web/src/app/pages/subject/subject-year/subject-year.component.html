@@ -1,0 +1,38 @@
+<div class="row">
+  <div class="col-auto">
+    <h3>Subject For {{ year }} year student</h3>
+  </div>
+  <div class="col-md-2">
+    <a [routerLink]="['/subject/add']" class="btn btn-primary ms-2">
+      <i class="bi bi-plus"></i> Add new
+    </a>
+  </div>
+</div>
+<div class="col-md-8 align-content-center">
+  <div class="col-md-10">
+    <table class="table-striped">
+      <thead>
+        <th>Name</th>
+        <th>Year</th>
+        <th>Semester</th>
+        <th></th>
+        <th></th>
+      </thead>
+
+      <tbody *ngFor="let item of subjects">
+        <td>{{ item.name }}</td>
+        <td>{{ item.yearLevel }}</td>
+        <td>{{ item.semester }}</td>
+        <td>
+          <a
+            (click)="edit(item.id)"
+            routerLinkActive="router-link-active"
+            class="btn btn-outline-info"
+          >
+            Edit
+          </a>
+        </td>
+      </tbody>
+    </table>
+  </div>
+</div>

@@ -1,0 +1,34 @@
+<div class="navbar navbar-expand-lg text-black">
+  <div class="container ms-4">
+    <a class="navbar-brand" [routerLink]="['/home']">Student</a>
+
+    <div class="collapse navbar-collapse">
+      <ul class="nav navbar-nav ms-5">
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            [routerLink]="['/student']"
+            routerLinkActive="router-link-active"
+          >
+            <i class="bi bi-person"></i>
+            Student
+          </a>
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            [routerLink]="['/subject']"
+            routerLinkActive="active"
+          >
+            <i class="bi bi-book-fill"></i>
+            Subject
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="container pt-3">
+  <router-outlet></router-outlet>
+</div>

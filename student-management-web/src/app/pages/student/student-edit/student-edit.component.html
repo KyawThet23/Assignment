@@ -1,0 +1,49 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-4">
+      <div class="card" style="width: 18rem">
+        <div class="card-body">
+          <h5 class="card-title">{{ student.name }}</h5>
+          <h6 class="card-subtitle mb-2 text-muted">Contact</h6>
+          <p>
+            Email : {{ student.email }}
+            <br />
+            Phone : {{ student.phone }}
+          </p>
+          <h6 class="card-subtitle mb-2 text-muted">Personal</h6>
+          <p>
+            DOB : {{ student.dob | date : "MM-dd-yyyy" }}
+            <br />
+            Gender : {{ student.gender }}
+          </p>
+        </div>
+        <div class="card-footer">
+          <button (click)="update(student.id)" class="btn btn-primary">
+            <i class="bi bi-gear"></i> Edit
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="col-auto">
+      <table class="table">
+        <thead>
+          <th>Name</th>
+          <th>Mark</th>
+          <th>Semester</th>
+          <th></th>
+        </thead>
+        <tbody *ngFor="let item of subject">
+          <th>{{ item[0] }}</th>
+          <th>{{ item[1] }}</th>
+          <th>{{ item[3] }}</th>
+          <th>
+            <input #inputElement type="number" />
+            <button (click)="onButtonClick(inputElement.value, item[2])">
+              Add
+            </button>
+          </th>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

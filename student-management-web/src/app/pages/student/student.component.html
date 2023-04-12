@@ -1,0 +1,36 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-4">
+      <!-- For search -->
+      <form class="row g-3" (ngSubmit)="onSubmit()">
+        <div class="col-auto">
+          <input
+            type="text"
+            class="form-control"
+            name="name"
+            placeholder="Type name"
+            [(ngModel)]="name"
+          />
+        </div>
+        <div class="col-auto">
+          <button type="submit" class="btn btn-primary mb-3">Search</button>
+        </div>
+      </form>
+    </div>
+    <div class="col-md-2">
+      <!-- For year -->
+      <select [(ngModel)]="year" (change)="onSelect()" class="form-select">
+        <option value="First">First Year</option>
+        <option value="Second">Second Year</option>
+        <option value="Third">Third Year</option>
+      </select>
+    </div>
+    <div class="col-md-2">
+      <a [routerLink]="['/student/add']" class="btn btn-info"> Add new </a>
+    </div>
+  </div>
+</div>
+
+<div class="container mt-3">
+  <router-outlet></router-outlet>
+</div>

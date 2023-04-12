@@ -1,0 +1,29 @@
+<div class="col-md-10">
+  <table class="table">
+    <thead class="bg-black text-white">
+      <th>Name</th>
+      <th>Email</th>
+      <th>Year</th>
+      <th></th>
+      <th></th>
+    </thead>
+
+    <tbody *ngFor="let item of students">
+      <td>{{ item.name }}</td>
+      <td>{{ item.year }}</td>
+      <td>
+        <button
+          (click)="details(item.id, item.year)"
+          class="btn btn-outline-info"
+        >
+          View Details
+        </button>
+      </td>
+      <td>
+        <button (click)="delete(item.id)" class="btn btn-outline-danger">
+          Delete
+        </button>
+      </td>
+    </tbody>
+  </table>
+</div>

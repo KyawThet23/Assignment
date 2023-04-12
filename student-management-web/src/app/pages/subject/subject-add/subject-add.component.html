@@ -1,0 +1,32 @@
+<h3>Add new Subject</h3>
+<div class="container">
+  <form [formGroup]="subjectForm" (ngSubmit)="onSubmit()">
+    <div class="row">
+      <div class="col-md-6">
+        <label for="name" class="form-label">Name</label>
+        <input type="text" class="form-control" formControlName="name" />
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-3">
+        <label for="year" class="form-label">Year</label>
+        <select class="form-select" formControlName="yearLevel">
+          <option value="First Year">First</option>
+          <option value="Second Year">Second</option>
+          <option value="Third Year">Third</option>
+          <option value="Fourth Year">Fourth</option>
+        </select>
+      </div>
+      <div class="col-md-3">
+        <label for="sem" class="form-label">Semester</label>
+        <select class="form-select" formControlName="semester">
+          <option value="First Sem">First</option>
+          <option value="Second Sem">Second</option>
+        </select>
+      </div>
+    </div>
+    <button class="btn btn-outline-primary" [disabled]="!subjectForm.valid">
+      Add
+    </button>
+  </form>
+</div>

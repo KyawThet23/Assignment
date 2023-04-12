@@ -1,0 +1,28 @@
+<h3>{{ year }} year student list</h3>
+<div class="col-md-10">
+  <table class="table">
+    <thead>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Year</th>
+      <th></th>
+      <th></th>
+    </thead>
+
+    <tbody *ngFor="let item of students">
+      <td>{{ item.name }}</td>
+      <td>{{ item.email }}</td>
+      <td>{{ item.year }}</td>
+      <td>
+        <button (click)="details(item.id)" class="btn btn-outline-info">
+          View Details
+        </button>
+      </td>
+      <td>
+        <button (click)="delete(item.id)" class="btn btn-outline-danger">
+          Delete
+        </button>
+      </td>
+    </tbody>
+  </table>
+</div>
